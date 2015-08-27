@@ -25,7 +25,7 @@ app.get('/health', function (req, res, next) {
 
 bundler();
 
-// Any requests to localhost:3000/build is proxied
+// Any requests to localhost:8080/dist is proxied
 // to webpack-dev-server
 app.all('/dist/*', function (req, res) {
 	proxy.web(req, res, {
