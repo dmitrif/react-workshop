@@ -1,0 +1,129 @@
+@c-button-green: #64cc3a;
+@c-button-highlight: lighten(@c-button-green, 30%);
+@c-button-shadow: darken(@c-button-green, 30%);
+
+@c-text: #000000;
+@c-text-light: #999999;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #000 url('/img/bg.jpg') top left repeat;
+	background-size: cover;
+}
+
+#Stopwatch {
+	width: 600px;
+	margin: 10% auto 0;
+}
+
+#Logo {
+	margin: 0 auto 30px;
+	display: block;
+	width: 340px;
+	height: 56px;
+	background: transparent url('/img/logo.png') center center no-repeat;
+	text-indent: -3000px;
+}
+
+#TaskView {
+	position: relative;
+	box-shadow: 0 0 15px 5px #000;
+	background: #FFF;
+
+	input {
+		width: 86%;
+		padding: 10px;
+		border-right: 1px solid #AAA;
+
+		&[disabled] {
+			color: @c-text-light;
+		}
+	}
+
+	button {
+		font-family: "Helvetica Neue", Arial, Verdana, Sans-Serif;
+		font-weight: bold;
+		background-color: @c-button-green;
+		border: 1px solid @c-button-shadow;
+		text-transform: uppercase;
+		color: white;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 15%;
+		text-align: center;
+
+		&:hover, &:focus {
+			background-color: lighten(@c-button-green, 5%);
+			border-color: @c-button-highlight @c-button-shadow @c-button-shadow @c-button-highlight;
+		}
+
+		&:active {
+			background-color: darken(@c-button-green, 10%);
+			border-color: @c-button-shadow @c-button-highlight @c-button-highlight @c-button-shadow;
+		}
+	}
+
+	#ElapsedTime {
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    right: 14%;
+	    padding: 2px 15px;
+	    color: #999;
+	    border-left: 1px solid #ddd;
+	    margin: 10px 0;
+	}
+
+	#StartButton {
+		right: 0;
+	}
+
+	#ResetTask {
+		right: 7%;
+		width: 7%;
+	}
+
+	#CompleteTask {
+		right: 0;
+		width: 7%;
+	}
+}
+
+#TaskHistoryList {
+	box-shadow: 0 0 15px 5px #000;
+	margin-top: 30px;
+
+	table {
+		width: 100%;		
+		border-collapse: collapse;
+		background: white;
+	}
+
+	th, td {
+		padding: 5px 15px;
+	}
+
+	th {
+		background: @c-button-green;
+		color: @c-text;
+		font-weight: bold;
+		border: 1px solid darken(@c-button-green, 10%);
+	}
+
+ 	td {
+		border: 1px solid #CCC;
+		text-align: center;
+	}
+
+	.empty-row td {
+		text-align: center;
+	}
+
+	tr:nth-child(2n) {
+		background: darken(#FFF, 4%);
+	}
+}
