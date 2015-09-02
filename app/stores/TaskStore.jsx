@@ -9,7 +9,7 @@
 
     var CHANGE_EVENT = 'change';
 
-    var _tasks = Immutable.List();
+    var _tasks = [];
     var _currentTask = null;
 
     var TaskStore = assign({}, EventEmitter.prototype, {
@@ -27,7 +27,7 @@
 
         add: function (task) {
             if (_currentTask !== null) {
-                _tasks = _tasks.unshift(_currentTask);
+                _tasks.unshift(_currentTask);
             }
 
             _currentTask = task;
@@ -41,22 +41,17 @@
             return _currentTask;
         },
 
-        remove: function (id) {
-            _tasks = _tasks.filterNot(function (sample) {
-                return sample._id === id;
-            });
-        },
-
         reset: function (id) {
-            if (_currentTask !== null && _currentTask.get('id') === id) {
-                _currentTask = _currentTask.set('startTime', Moment());
+            if (_currentTask !== null && _currentTask.id === id) {
+                _currentTask.startTime = Moment();
             }
         },
 
         complete: function () {
-            _currentTask = _currentTask.set('endTime', Moment());
+            _currentTask.endTime = Moment();
 
             this.add(null);
+            console.log(_tasks);
         }
     });
 

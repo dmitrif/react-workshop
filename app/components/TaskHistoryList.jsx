@@ -4,7 +4,18 @@ var ElapsedTime = require('components/ElapsedTime');
 
 var TaskHistoryList = React.createClass({
 	render: function () {
-		var tasks = null;
+		var tasks = (<tr className="empty-row"><td>-</td><td>-</td><td>-</td><td>-</td></tr>);
+
+		if (this.props.tasks.length > 0) {
+			tasks = this.props.tasks.map(task => 
+				(<tr key={task.startTime}>
+					<td>{task.name}</td>
+					<td>{task.startTime.format('HH:mm:ss')}</td>
+					<td>{task.endTime.format('HH:mm:ss')}</td>
+					<td><ElapsedTime from={task.startTime} to={task.endTime} static={true} /></td>
+				</tr>)
+			);
+		}
 
 		return (
 			<div id="TaskHistoryList">
@@ -18,6 +29,7 @@ var TaskHistoryList = React.createClass({
 						</tr>
 					</thead>
 					<tbody>
+						{tasks}
 					</tbody>
 				</table>
 			</div>

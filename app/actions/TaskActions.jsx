@@ -9,11 +9,11 @@
 
     module.exports = {
         create: function (name) {
-            var task = new Task({
+            var task = {
                 id: uuid.v4(),
                 name: name,
                 startTime: Moment()
-            });
+            };
 
             MainDispatcher.handleServerAction({
                 type: Actions.CREATE_TASK,

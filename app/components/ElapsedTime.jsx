@@ -10,7 +10,7 @@ var ElapsedTime = React.createClass({
 
 	getInitialState: function () {
 		return {
-			elapsedTime: Moment.duration(this.getCurrentTime() - this.props.from) 
+			elapsedTime: Moment.duration(this.getCurrentTime() - Moment(this.props.from)) 
 		};
 	},
 
@@ -29,7 +29,7 @@ var ElapsedTime = React.createClass({
 	},
 
 	tick: function() {
-		this.setState({elapsedTime: Moment.duration(this.getCurrentTime() - this.props.from)});
+		this.setState({elapsedTime: Moment.duration(this.getCurrentTime() - Moment(this.props.from))});
 	},	
 
 	render: function () {
