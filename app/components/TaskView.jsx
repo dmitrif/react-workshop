@@ -11,7 +11,7 @@ var CurrentTaskView = React.createClass({
 	},
 
 	reset: function () {
-		TaskActions.reset(this.props.task.get('id'));
+		TaskActions.reset(this.props.task.id);
 	},
 
 	complete: function () {
@@ -28,12 +28,12 @@ var CurrentTaskView = React.createClass({
 			);
 		}
 
-		var startTime = Moment(this.props.task.get('startTime'));
+		var startTime = Moment(this.props.task.startTime);
 
 		return (
 			<div id="TaskView" className="task-current">
            		<dl>
-           			<input value={this.props.task.get('name')} disabled="disabled" />
+           			<input value={this.props.task.name} disabled="disabled" />
            			<ElapsedTime from={startTime} />
            			<button id="ResetTask" onClick={this.reset}><span className="icon-to-start" /></button>
            			<button id="CompleteTask" onClick={this.complete}><span className="icon-ok" /></button>

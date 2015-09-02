@@ -6,16 +6,15 @@ var TaskHistoryList = React.createClass({
 	render: function () {
 		var duration;
 
-		// var tasks = (<tr className="empty-row"><td>-</td><td>-</td><td>-</td><td>-</td></tr>);
-		var tasks = null;
+		var tasks = (<tr className="empty-row"><td>-</td><td>-</td><td>-</td><td>-</td></tr>);
 
-		if (this.props.tasks.size > 0) {
+		if (this.props.tasks.length > 0) {
 			tasks = this.props.tasks.map(task => 
-				(<tr key={task.get('startTime')}>
-					<td>{task.get('name')}</td>
-					<td>{task.get('startTime').format('HH:mm:ss')}</td>
-					<td>{task.get('endTime').format('HH:mm:ss')}</td>
-					<td><ElapsedTime from={task.get('startTime')} to={task.get('endTime')} static={true} /></td>
+				(<tr key={task.startTime}>
+					<td>{task.name}</td>
+					<td>{task.startTime.format('HH:mm:ss')}</td>
+					<td>{task.endTime.format('HH:mm:ss')}</td>
+					<td><ElapsedTime from={task.startTime} to={task.endTime} static={true} /></td>
 				</tr>)
 			);
 		}
