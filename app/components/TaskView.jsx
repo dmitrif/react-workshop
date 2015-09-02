@@ -4,7 +4,7 @@ var Moment = require('moment');
 var TaskActions = require('actions/TaskActions');
 var ElapsedTime = require('components/ElapsedTime');
 
-var CurrentTaskView = React.createClass({
+var TaskView = React.createClass({
 	create: function () {
 		var taskName = React.findDOMNode(this.refs.taskName).value;
 	},
@@ -34,4 +34,4 @@ var CurrentTaskView = React.createClass({
 });
 
 
-module.exports = CurrentTaskView;
+module.exports = TaskView;
