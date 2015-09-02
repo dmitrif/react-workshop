@@ -5,8 +5,6 @@
     var MainDispatcher = require('dispatcher/MainDispatcher');
     var Actions = require('constants/BaseConstants').Actions;
 
-    var Task = require('objects/Task');
-
     module.exports = {
         create: function (name) {
             var task = {

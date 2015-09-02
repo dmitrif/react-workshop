@@ -51,7 +51,6 @@
             _currentTask.endTime = Moment();
 
             this.add(null);
-            console.log(_tasks);
         }
     });
 
