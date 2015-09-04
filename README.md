@@ -1,6 +1,6 @@
 # React Workshop
 - Clone project.
-- From your terminal / command-line, run `npm start`.
+- From your terminal / command-line, run `npm install`, then `npm start`.
 - Navigate to `http://localhost:8080`.
 
 ## Further Journey (Useful materials / libraries)
