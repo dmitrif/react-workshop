@@ -1,7 +1,9 @@
 # React Workshop
-- Clone project.
-- From your terminal / command-line, run `npm install`, then `npm start`.
-- Navigate to `http://localhost:8080`.
+- Install Vagrant 1.7.4 - https://www.vagrantup.com/downloads.html
+- Install VirtualBox - http://download.virtualbox.org/virtualbox/5.0.0/
+- Clone project - https://github.com/dmitrif/react-workshop
+- From your terminal / command-line, run `vagrant up, then vagrant ssh –c "cd /vagrant && npm start"`. (or simply `./run.sh` for Mac users)
+- Navigate to http://localhost:8080.
 
 ## Further Journey (Useful materials / libraries)
 - Flux Docs - https://facebook.github.io/flux/
