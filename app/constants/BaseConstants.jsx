@@ -3,16 +3,16 @@
 
     module.exports = {
 
-        PayloadSources: keyMirror({
-            SERVER_ACTION: null,
-            VIEW_ACTION: null
+        Actions: keyMirror({
+            CREATE_TODO: null,
+            REMOVE_TODO: null,
+            COMPLETE_TODO: null
         }),
 
-        Actions: keyMirror({
-            CREATE_TASK: null,
-            RESET_TASK: null,
-        	COMPLETE_TASK: null
-        })
+        TodoStates: {
+            ACTIVE: 0,
+            COMPLETE: 1
+        }
 
     };
 }());

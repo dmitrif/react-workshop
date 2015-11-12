@@ -14,9 +14,31 @@ body {
 	background-size: cover;
 }
 
-#Stopwatch {
-	width: 600px;
-	margin: 10% auto 0;
+
+button {
+	font-family: "Helvetica Neue", Arial, Verdana, Sans-Serif;
+	font-weight: bold;
+	background-color: @c-button-green;
+	border: 1px solid @c-button-shadow;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+
+	&:hover, &:focus {
+		background-color: lighten(@c-button-green, 5%);
+		border-color: @c-button-highlight @c-button-shadow @c-button-shadow @c-button-highlight;
+	}
+
+	&:active {
+		background-color: darken(@c-button-green, 10%);
+		border-color: @c-button-shadow @c-button-highlight @c-button-highlight @c-button-shadow;
+	}
+
+	&:disabled {
+		background-color: darken(@c-text-light, 20%);
+		color: darken(@c-text-light, 50%);
+		border-color: @c-button-shadow @c-button-highlight @c-button-highlight @c-button-shadow;
+	}
 }
 
 #Logo {
@@ -28,7 +50,12 @@ body {
 	text-indent: -3000px;
 }
 
-#TaskView {
+#TodoComponent {
+	width: 600px;
+	margin: 10% auto 0;
+}
+
+#TodoCreateForm {
 	position: relative;
 	box-shadow: 0 0 15px 5px #000;
 	background: #FFF;
@@ -44,86 +71,77 @@ body {
 	}
 
 	button {
-		font-family: "Helvetica Neue", Arial, Verdana, Sans-Serif;
-		font-weight: bold;
-		background-color: @c-button-green;
-		border: 1px solid @c-button-shadow;
-		text-transform: uppercase;
-		color: white;
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		width: 15%;
-		text-align: center;
-
-		&:hover, &:focus {
-			background-color: lighten(@c-button-green, 5%);
-			border-color: @c-button-highlight @c-button-shadow @c-button-shadow @c-button-highlight;
-		}
-
-		&:active {
-			background-color: darken(@c-button-green, 10%);
-			border-color: @c-button-shadow @c-button-highlight @c-button-highlight @c-button-shadow;
-		}
 	}
 
-	#ElapsedTime {
-		position: absolute;
-	    top: 0;
-	    bottom: 0;
-	    right: 14%;
-	    padding: 2px 15px;
-	    color: #999;
-	    border-left: 1px solid #ddd;
-	    margin: 10px 0;
-	}
-
-	#StartButton {
+	#AddButton {
 		right: 0;
-	}
-
-	#ResetTask {
-		right: 7%;
-		width: 7%;
-	}
-
-	#CompleteTask {
-		right: 0;
-		width: 7%;
 	}
 }
 
-#TaskHistoryList {
+#TodoList {
 	box-shadow: 0 0 15px 5px #000;
 	margin-top: 30px;
+	background: #FFF;
 
-	table {
-		width: 100%;		
-		border-collapse: collapse;
-		background: white;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-bottom: 5px;
+			padding: 10px;
+		}
+
+
+		:last-child {
+			margin: 0;
+		}
 	}
 
-	th, td {
-		padding: 5px 15px;
-	}
-
-	th {
-		background: @c-button-green;
-		color: @c-text;
-		font-weight: bold;
-		border: 1px solid darken(@c-button-green, 10%);
-	}
-
- 	td {
-		border: 1px solid #CCC;
-		text-align: center;
-	}
-
-	.empty-row td {
-		text-align: center;
-	}
-
-	tr:nth-child(2n) {
+	li:nth-child(2n) {
 		background: darken(#FFF, 4%);
 	}
+
+	button {
+		border-radius: 5px;
+	}
+
+	.remove-button {
+		background-color: #cc3a64;
+	}
+
+	.actions {
+		display: inline-block;
+		margin-right: 10px;
+		width: 50px;
+		text-align: center;
+	}
+
+	.complete {
+		text-decoration: line-through;
+		color: @c-button-green;
+	}
+}
+
+.todo-enter {
+  opacity: 0.01;
+}
+
+.todo-enter.todo-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.todo-leave {
+  opacity: 1;
+}
+
+.todo-leave.todo-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

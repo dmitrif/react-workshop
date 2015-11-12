@@ -6,8 +6,8 @@ require('assets/fontello/css/kj-icons.css');
 var React = require('react/addons');
 window.React = React;
 
-var Stopwatch = require('components/Stopwatch');
+var TodoComponent = require('components/TodoComponent');
 
 (function() {
-	React.render(<Stopwatch />, document.getElementById('root')); 
+	React.render(<TodoComponent />, document.getElementById('root')); 
 }());
