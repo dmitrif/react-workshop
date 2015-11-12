@@ -8,16 +8,11 @@ var TodoListItem = React.createClass({
 		return (
 			<span className="actions">
 				<button className="complete-button" 
-					onClick={this.doComplete}
 					disabled={this.props.complete}>
 					<span className="icon-ok"></span>
 				</button>
 			</span>
 		);
-	},	
-
-	doComplete: function () {
-		Actions.complete(this.props.id);
 	},
 
 	render: function () {
