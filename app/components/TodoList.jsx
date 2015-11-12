@@ -4,6 +4,12 @@ var ReactTransitionGroup = React.addons.CSSTransitionGroup;
 var TodoListItem = require('components/TodoListItem');
 
 var TodoList = React.createClass({
+	getDefaultProps() {
+	    return {
+	        todos: []  
+	    };
+	},
+
 	render: function () {
 		return (
 			<div id="TodoList">
