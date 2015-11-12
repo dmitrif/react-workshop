@@ -18,7 +18,7 @@ var TodoCreateForm = React.createClass({
            			placeholder="What do you want to get done?" 
        			/>
            		
-           		<button id="AddButton" onClick={this.create}>
+           		<button id="AddButton">
            			<span className="icon-play"></span>
        			</button>
 			</form>
