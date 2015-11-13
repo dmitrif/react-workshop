@@ -36,5 +36,8 @@
 - Webpacks (What drives hot swapping) - https://webpack.github.io
 - Frontend Handbook - http://www.frontendhandbook.com/
 
+## End Result
+[View the end result on the final branch.](https://github.com/dmitrif/react-workshop/tree/final)
+
 ## Slides 
 [Click here to view the slides](http://bit.ly/1WVuIVH)
