@@ -34,6 +34,7 @@
 - A great tutorial (Part 2) - https://scotch.io/tutorials/build-a-real-time-twitter-stream-with-node-and-react-js
 - A great tutorial (Part 3) - https://scotch.io/tutorials/getting-to-know-flux-the-react-js-architecture
 - Webpacks (What drives hot swapping) - https://webpack.github.io
+- Frontend Handbook - http://www.frontendhandbook.com/
 
 ## Slides 
 [Click here to view the slides](http://bit.ly/1WVuIVH)
