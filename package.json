@@ -13,7 +13,7 @@
     "express": "^4.13.3",
     "babel": "^4.7.16",
     "lodash.defaults": "^3.1.0",
-    "react": "^0.13.1",
+    "react": "^16.13.1",
     "body-parser": "^1.13.3",
     "node-uuid": "^1.4.3",
     "object-assign": "^2.1.1",
